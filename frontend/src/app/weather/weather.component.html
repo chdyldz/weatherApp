@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Search for Weather:</h3>
+            <form [formGroup]="weatherSearchForm" (ngSubmit)="sendToAPIXU(weatherSearchForm.value)">
+                <div class="form-group">
+                    <input type="text" 
+                            class="form-control" 
+                            id="city" 
+                            aria-describedby="weatherLocation" 
+                            placeholder="Please input a city"
+                            formControlName="city">
+                    <input type="text" 
+                            class="form-control" 
+                            id="country" 
+                            aria-describedby="weatherLocation" 
+                            placeholder="Please input a country"
+                            formControlName="country">
+                </div>
+                <div class="text-center">
+                    <button type="submit" 
+                            class="btn btn-success btn-md">Search for the weather</button>
+                </div>
+                
+            </form>
+        </div>
+        <div class="col-md-6">
+            <h3 class="text-center my-4">Weather Details:</h3>
+            <div class="text-center">Current weather conditions: 
+             </div>
+            <p class="text-center">Temperature in Degrees Celcius:{{weatherData.temperature}}</p>
+            <p class="text-center">Feels like in Degrees Celcius: {{weatherData.feelsLike}} </p>
+            <p class="text-center">daily minimum temperature Degrees Celcius: {{weatherData.tempMin}} </p>
+            <p class="text-center">daily maximum temperature Degrees Celcius: {{weatherData.tempMax}} </p>
+            <p class="text-center">humidity: {{weatherData.humidity}} </p>
+            <p class="text-center">wind speed: {{weatherData.windspeed}} </p>
+            <p class="text-center">wind Degrees: {{weatherData.winddeg}} </p>
+            <p class="text-center">pressure: {{weatherData.pressure}} </p>
+            <p class="text-center">Location searched:{{weatherData.country}} / {{weatherData.city}} </p>
+        </div>
+    </div>
+</div>
