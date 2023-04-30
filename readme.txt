@@ -1,3 +1,9 @@
-open backend project in intellij and run with jdk 1.8
+open backend project in intellij and run with jdk 11
+or run jar file in out folder
+java -jar weatherApp.jar
+
 open frontend in terminal 
-  npm install and then ng serve
+npm install and then ng serve
+
+node v14
+angular cli 9
