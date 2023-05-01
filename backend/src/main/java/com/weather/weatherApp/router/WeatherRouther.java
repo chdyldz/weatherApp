@@ -17,11 +17,11 @@ public class WeatherRouther extends RouteBuilder {
     public void configure() {
 
         restConfiguration()
-                .component("servlet").contextPath("/")
-                .host("0.0.0.0").port("4200").bindingMode(RestBindingMode.json)
-                .enableCORS(true) // <-- Important
+                .component("servlet").contextPath("/dist/weather-app/")
+                .bindingMode(RestBindingMode.json).dataFormatProperty("disableFeatures", "FAIL_ON_EMPTY_BEANS")
+                .enableCORS(true)
                 .corsHeaderProperty("Access-Control-Allow-Origin","*")
-                .corsHeaderProperty("Access-Control-Allow-Headers","Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, city, country");
+                .corsHeaderProperty("Access-Control-Allow-Headers","Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, city,country");
 
         rest("/api").description("Weather api")
                 .consumes(MediaType.APPLICATION_JSON_VALUE)
