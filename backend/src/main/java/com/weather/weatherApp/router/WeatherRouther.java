@@ -17,8 +17,8 @@ public class WeatherRouther extends RouteBuilder {
     public void configure() {
 
         restConfiguration()
-                .component("servlet").contextPath("/dist/weather-app/")
-                .bindingMode(RestBindingMode.json).dataFormatProperty("disableFeatures", "FAIL_ON_EMPTY_BEANS")
+                .component("servlet")
+                .bindingMode(RestBindingMode.json)
                 .enableCORS(true)
                 .corsHeaderProperty("Access-Control-Allow-Origin","*")
                 .corsHeaderProperty("Access-Control-Allow-Headers","Origin, Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers, city,country");
